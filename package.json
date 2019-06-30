@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "lambdahunt backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lambdahunt/backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lambdahunt/backend/issues"
+  },
+  "homepage": "https://github.com/lambdahunt/backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.18.0",
+    "node": "^12.5.0",
+    "pg": "^7.11.0",
+    "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
