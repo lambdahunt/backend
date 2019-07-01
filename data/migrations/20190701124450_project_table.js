@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
     project.string("link");
     project.string("role");
     project
-      .int("candinfoId")
+      .integer("candinfoId")
       .unsigned()
       .references("id")
       .inTable("candinfo")

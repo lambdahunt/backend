@@ -12,7 +12,7 @@ exports.up = function(knex, Promise) {
     candidate.bool("hired").defaultTo(false);
     candidate.string("track");
     candidate
-      .int("trackId")
+      .integer("trackId")
       .unsigned()
       .references("id")
       .inTable("track")

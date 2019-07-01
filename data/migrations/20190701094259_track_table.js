@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
     track.increments("id").primary();
     track.string("title").unique();
     track.string("description");
-    track.int("duration");
+    track.integer("duration");
     track.timestamp("createdAt").defaultTo(knex.fn.now());
   });
 };
