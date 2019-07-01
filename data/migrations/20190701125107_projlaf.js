@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
     projlaf.increments("id").primary();
     projlaf.string("title");
     projlaf
-      .int("projectId")
+      .integer("projectId")
       .unsigned()
       .references("id")
       .inTable("project")

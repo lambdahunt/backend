@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     post.string("author").notNullable();
     post.string("textbody");
     post
-      .int("candinfoId")
+      .integer("candinfoId")
       .unsigned()
       .references("id")
       .inTable("candinfo")
