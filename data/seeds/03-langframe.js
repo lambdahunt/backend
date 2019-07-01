@@ -22,7 +22,8 @@ exports.seed = function(knex) {
           title: "javascript",
           description: "high-level, popular web language",
           trackId: 1
-        }
+        },
+        { id: 4, title: "figma", description: "designing tool", trackId: 2 }
       ]);
     });
 };
