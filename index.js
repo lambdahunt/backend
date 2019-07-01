@@ -6,6 +6,11 @@ server.use(express.json());
 //
 const admin = require("./api/routes/adminRoute");
 //
+
+const authRoutes = require("./auth/auth-router.js");
+
+authRoutes(server);
+
 server.use("/admin", admin);
 server.get("/", (req, res) => {
   res.send("<h1>Server Running<h1>");
