@@ -5,7 +5,8 @@ const server = express();
 server.use(express.json());
 //
 const admin = require("./api/routes/adminRoute");
-const candInfo = require("./api/routes/cadinfoRoute")
+const candInfo = require("./api/routes/cadinfoRoute");
+const track = require("./api/routes/trackRoute");
 //
 
 const authRoutes = require("./auth/auth-router.js");
@@ -13,8 +14,8 @@ const authRoutes = require("./auth/auth-router.js");
 authRoutes(server);
 
 server.use("/admin", admin);
+server.use("/track", track);
 server.use("/candInfo", candInfo);
-
 server.get("/", (req, res) => {
   res.send("<h1>Server Running<h1>");
 });
