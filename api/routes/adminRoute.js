@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const adminDb = require("../helpers/adminDb");
+const adminDb = require("../helpers/adminModel");
 
 //authorization middleware
 const { authenticate } = require("../../auth/restricted-middleware");
