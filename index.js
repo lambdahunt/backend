@@ -1,6 +1,8 @@
 const express = require("express");
 const server = express();
 server.use(express.json());
+const admin = require("./api/routes/adminRoute");
+server.use("/admin", admin);
 server.get("/", (req, res) => {
   res.send("<h1>Server Running<h1>");
 });
