@@ -5,10 +5,12 @@ const server = express();
 server.use(express.json());
 //
 const admin = require("./api/routes/adminRoute");
+const candInfo = require("./api/routes/cadinfoRoute");
 const track = require("./api/routes/trackRoute");
 //
 server.use("/admin", admin);
 server.use("/track", track);
+server.use("/candInfo", candInfo);
 server.get("/", (req, res) => {
   res.send("<h1>Server Running<h1>");
 });
