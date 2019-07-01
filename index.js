@@ -8,6 +8,11 @@ const admin = require("./api/routes/adminRoute");
 const candInfo = require("./api/routes/cadinfoRoute");
 const track = require("./api/routes/trackRoute");
 //
+
+const authRoutes = require("./auth/auth-router.js");
+
+authRoutes(server);
+
 server.use("/admin", admin);
 server.use("/track", track);
 server.use("/candInfo", candInfo);

@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const adminDb = require("../helpers/adminDb");
 
-router.get("/", async (req, res) => {
+//authorization middleware
+const { authenticate } = require("../../auth/restricted-middleware");
+
+router.get("/", authenticate, async (req, res) => {
   try {
     const admin = await adminDb.get();
     res.status(200).json(admin);
