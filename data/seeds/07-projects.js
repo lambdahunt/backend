@@ -11,6 +11,9 @@ exports.seed = function(knex, Promise) {
           description: "ImmuTrack was built from the ground up to help reduce hassle and potential stress through the provision of a centralized and streamlined resource with which to track all of your immunization needs.",
           date: "12/21/2018",
           role: "Frontend Architecture",
+          url:"something.com",
+          deploy:"something.com",
+          repo:"something.com",
           candinfoId: 4
         },
         {
@@ -19,6 +22,9 @@ exports.seed = function(knex, Promise) {
           description: "A dynamic scoreboard app for tracking points and timing turns created with React",
           date: "1/01/2019",
           role: "Backend Architecture",
+          url:"something.com",
+          deploy:"something.com",
+          repo:"something.com",
           candinfoId: 2
         },
         {
@@ -27,6 +33,9 @@ exports.seed = function(knex, Promise) {
           description: "This Project explored advanced CSS techniques using Responsive Design and Preprocessing.",
           date: "7/11/2019",
           role: "UI",
+          url:"something.com",
+          deploy:"something.com",
+          repo:"something.com",
           candinfoId: 4
         }
       ]);

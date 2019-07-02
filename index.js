@@ -10,6 +10,7 @@ const track = require("./api/routes/trackRoute");
 const langframe = require("./api/routes/langframeRoute");
 const contract = require("./api/routes/contractRoute");
 const candidate = require("./api/routes/candidateRoute");
+const projects = require("./api/routes/projectsRoutes");
 //
 
 const authRoutes = require("./auth/auth-router.js");
@@ -25,6 +26,7 @@ server.use("/candinfo", candInfo);
 server.use("/langframe", langframe);
 server.use("/contract", contract);
 server.use("/candidate", candidate);
+server.use("/projects", projects)
 
 server.get("/", (req, res) => {
   res.send("<h1>Server Running<h1>");
