@@ -17,11 +17,15 @@ const authRoutes = require("./auth/auth-router.js");
 authRoutes(server);
 
 server.use("/admin", admin);
+
+
+
 server.use("/track", track);
-server.use("/candInfo", candInfo);
+server.use("/candinfo", candInfo);
 server.use("/langframe", langframe);
 server.use("/contract", contract);
 server.use("/candidate", candidate);
+
 server.get("/", (req, res) => {
   res.send("<h1>Server Running<h1>");
 });
