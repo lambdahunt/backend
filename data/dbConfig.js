@@ -3,4 +3,3 @@ const knexConfig = require("../knexfile");
 
 // module.exports = knex(knexConfig.development);
 module.exports = knex(knexConfig.production);
-

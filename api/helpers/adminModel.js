@@ -30,5 +30,12 @@ module.exports = {
     return db("candidate")
       .where({ id })
       .first();
+  },
+  register: async admin => {
+    // console.log(admin);
+    const [id] = await db("admin").insert(admin);
+    return db("admin")
+      .where({ id })
+      .first();
   }
 };
