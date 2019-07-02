@@ -4,8 +4,10 @@ exports.up = function(knex, Promise) {
     project.string("title").notNullable();
     project.string("description");
     project.date("date");
-    project.string("link");
+    project.string("deploy");
+    project.string("repo");
     project.string("role");
+    project.string("url");
     project
       .integer("candinfoId")
       .unsigned()
