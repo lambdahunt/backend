@@ -18,10 +18,10 @@ function findPost() {
     .where({ id })
 }
 
-async function addPost(candinfo) {
-    const [id] = await db('post').insert(candinfo);
+async function addPost(post) {
+    const [id] = await db('post').insert(post);
   
-    return findById(id);
+    return findPostById(id);
   }
 
 

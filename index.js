@@ -13,7 +13,7 @@ const authRoutes = require("./auth/auth-router.js");
 authRoutes(server);
 
 server.use("/admin", admin);
-server.use("/candInfo", candInfo);
+server.use("/candinfo", candInfo);
 
 server.get("/", (req, res) => {
   res.send("<h1>Server Running<h1>");
