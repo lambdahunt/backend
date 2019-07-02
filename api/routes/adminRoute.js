@@ -1,18 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const adminDb = require("../helpers/adminModel");
+const adminModel = require("../helpers/adminModel");
 
 //authorization middleware
 const { authenticate } = require("../../auth/restricted-middleware");
 
 router.get("/", authenticate, async (req, res) => {
   try {
-    const admin = await adminDb.get();
+    const admin = await adminModel.get();
     res.status(200).json(admin);
   } catch (error) {
     res.status(500).json({ error: "Error getting admin data." });
   }
 });
+// router.get("/", async (req, res) => {
+//   try {
+//     const admin = await adminModel.get();
+//     res.status(200).json(admin);
+//   } catch (error) {
+//     res.status(500).json({ error: "Error getting admin data." });
+//   }
+// });
 // create track
 router.post("/track", async (req, res) => {
   const { title, description, duration } = req.body;
@@ -26,7 +34,7 @@ router.post("/track", async (req, res) => {
     res.status(400).json({ error: "Please provide duration" });
   }
   try {
-    const track = await adminDb.initialize(req.body);
+    const track = await adminModel.initialize(req.body);
     res.status(201).json(track);
   } catch (error) {
     res.status(500).json({ error: "Error adding track to db." });
@@ -45,7 +53,7 @@ router.post("/topic", async (req, res) => {
     res.status(400).json({ eror: "Please provide track id" });
   }
   try {
-    const langframe = await adminDb.attach(req.body);
+    const langframe = await adminModel.attach(req.body);
     res.status(201).json(langframe);
   } catch (error) {
     res.status(500).json({ error: "Error attaching lang/frame to db" });
@@ -61,7 +69,7 @@ router.post("/contract", async (req, res) => {
     res.status(400).json({ error: "Please provide description" });
   }
   try {
-    const contract = await adminDb.hire(req.body);
+    const contract = await adminModel.hire(req.body);
     res.status(201).json(contract);
   } catch (error) {
     res.status(500).json({ error: "Error adding contract position to db" });
@@ -89,7 +97,7 @@ router.post("/candidate", async (req, res) => {
     res.status(400).json({ error: "Please provide track id" });
   }
   try {
-    const candidate = await adminDb.endorse(req.body);
+    const candidate = await adminModel.endorse(req.body);
     res.status(201).json(candidate);
   } catch (error) {
     res.status(500).json({ error: "Error adding candidate to db." });
