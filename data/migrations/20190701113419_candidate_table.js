@@ -10,6 +10,9 @@ exports.up = function(knex, Promise) {
     candidate.string("lastname").notNullable();
     candidate.string("contracts");
     candidate.bool("hired").defaultTo(false);
+    candidate.bool("isEndorsed").defaultTo(false);
+    candidate.bool("isTeamLead").defaultTo(false);
+    candidate.bool("isSectionLead").defaultTo(false);
     candidate.string("track");
     candidate
       .integer("trackId")

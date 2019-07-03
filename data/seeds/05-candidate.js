@@ -11,6 +11,9 @@ exports.seed = function(knex) {
           password: "dio123",
           firstname: "dionuta",
           lastname: "burton",
+          isSectionLead: true,
+          isTeamLead: false,
+          isEndorsed: true,
           track: "Full Stack Web",
           trackId: 1
         },
@@ -20,6 +23,9 @@ exports.seed = function(knex) {
           password: "eri123",
           firstname: "eric",
           lastname: "sarragalugo",
+          isSectionLead: true,
+          isTeamLead: false,
+          isEndorsed: true,
           track: "Full Stack Web",
           trackId: 1
         },
@@ -29,6 +35,9 @@ exports.seed = function(knex) {
           password: "jef123",
           firstname: "jeff",
           lastname: "kang",
+          isSectionLead: true,
+          isTeamLead: false,
+          isEndorsed: true,
           track: "Full Stack Web",
           trackId: 1
         },
@@ -38,6 +47,9 @@ exports.seed = function(knex) {
           password: "sha123",
           firstname: "shaun",
           lastname: "zinda",
+          isSectionLead: true,
+          isTeamLead: false,
+          isEndorsed: true,
           track: "User Experience Design",
           trackId: 2
         },
@@ -47,6 +59,9 @@ exports.seed = function(knex) {
           password: "rub123",
           firstname: "ruben",
           lastname: "rosa",
+          isSectionLead: true,
+          isTeamLead: false,
+          isEndorsed: true,
           track: "Full Stack Web",
           trackId: 1
         }
