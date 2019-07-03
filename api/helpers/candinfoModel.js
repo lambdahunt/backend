@@ -50,7 +50,7 @@ async function add(candinfo) {
   function findProject(candinfoId) {
     return db('project as p')
       .join('candinfo', 'p.candinfoId', 'candinfo.id')
-      .select('p.id as id', 'p.title', 'p.description', 'p.date', 'p.link', 'p.role', 'candinfo.id as candinfoId' )
+      .select('p.id as id', 'p.title', 'p.description', 'p.date', 'p.deploy', 'p.repo', 'p.deploy', 'p.url', 'candinfo.id as candinfoId' )
       .where({ "candinfoId": candinfoId });
   }
 
