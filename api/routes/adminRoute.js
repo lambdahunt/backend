@@ -122,8 +122,11 @@ router.post("/candidate", async (req, res) => {
 //register
 router.post("/register", async (req, res) => {
   let { username, password } = req.body;
-  if (!username || !password) {
-    res.status(400).json({ error: "Please provide username and password" });
+  if (!username) {
+    res.status(400).json({ error: "Please provide username" });
+  }
+  if (!password) {
+    res.status(400).json({ error: "Please provide password" });
   }
   try {
     const hash = bcrypt.hashSync(req.body.password, 12);
@@ -133,6 +136,27 @@ router.post("/register", async (req, res) => {
     res.status(201).json({ token });
   } catch (error) {
     res.status(500).json({ error: "Error adding admin to db" });
+  }
+});
+//login
+router.post("/login", async (req, res) => {
+  let { username, password } = req.body;
+  if (!username) {
+    res.status(400).json({ error: "Please provide username" });
+  }
+  if (!password) {
+    res.status(400).json({ error: "Please provide password" });
+  }
+  try {
+    const admin = await adminModel.login(req.body.username);
+    if (username && bcrypt.compareSync(req.body.password, admin.password)) {
+      const token = generateToken(admin);
+      res.status(200).json({ token });
+    } else {
+      res.status(401).json({ error: "Unauthorized, incorrect credentials" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error loging in" });
   }
 });
 
