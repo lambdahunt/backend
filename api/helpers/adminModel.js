@@ -37,5 +37,11 @@ module.exports = {
     return db("admin")
       .where({ id })
       .first();
+  },
+  login: async username => {
+    const admin = await db("admin")
+      .where({ username })
+      .first();
+    return admin;
   }
 };
